@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - master
-      #tells the pipeline to take changes in container.
     paths:
       -'packages/container/**'
 
 defaults:
-#changes the work directory for the npm i and so.
   run:
     working-directory:packages/container
 
@@ -27,3 +25,4 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+        AWS_DEFAULT_REGION: ""
